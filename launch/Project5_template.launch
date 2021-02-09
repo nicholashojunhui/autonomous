@@ -1,0 +1,11 @@
+<launch>
+
+  <!-- Activating move_group.launch (the Move Group Node) to activate OM control -->
+  <!-- Fill in codes below here; Refer to pick_move_place.launch for reference and extract only the relevant portion (i.e. Activating move_group.launch [the Move Group Node]) -->
+
+  
+
+  <!-- Project5 Node; fill in codes to run Project5 Node below here -->
+  
+
+</launch>
