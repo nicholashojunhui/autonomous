@@ -1,0 +1,71 @@
+
+###########################################################
+###########################################################
+
+Setup instructions: Uploading Controller Program to OpenCR:
+
+1. Ensure power is off first.
+
+2. Connect USB cable from OpenCR to the PC
+
+3. Open Arduino
+
+4. In Arduino IDE, go to File -> Examples -> OpenManipulator -> example -> Chain -> open_manipulator_chain
+
+5. Upload the example source to the OpenCR board; upload of firmware is successful if jump_to_fw appears at the end of the line
+
+###########################################################
+###########################################################
+
+Execution Instructions using Processing GUI:
+
+1. First remove the USB cable and connect the power supply to the OpenCR (Do NOT switch on the power yet)
+
+2. Manually lift the OM to a "L" position
+
+3. Hold the OM in that position and switch on the OpenCR power switch
+
+4. Check if the motors of the OM are torque enabled. You can let go of the OM once the motors are torque enabled
+
+5. Connect the OpenCR and PC with the USB cable
+
+6. Open the Processing Application
+
+7. Click File -> Open
+
+8. Search downloaded processing file from the following path and open it on Processing IDE:
+
+~/catkin_ws/src/ -> open_manipulator_processing -> Chain -> Chain.pde
+
+
+9. Begin Hand Guiding
+
+(a) Click the "Play" button to run the Processing source code, and a graphical GUI will be displayed
+
+(b) Click on the "CONTROLLER ON" virtual toggle button first to ensure that the motors are locked
+
+***Important: If you want to set the CONTROLLER or TORQUE to OFF, manually support the arm first!!! ***
+
+(c) Click on the "HAND GUIDING" tab to start doing the hand guiding process
+
+(d) ***Hold the robot ARM using your hand to prevent it from falling first***
+
+(e) Click the toggle button to "TORQUE OFF"
+
+(f) Move the ARM to the desired pose using your hand (click the GRIPPER OPEN/CLOSE if necessary to open/close the gripper)
+
+(g) Click the "SAVE JOINT POSE" to save the present pose
+
+(h) Repeat steps (f) and (g) to save the desired trajectories and/or gripper status of the ARM
+
+(i) Once done, click the toggle button to "TORQUE ON"
+
+(j) Click the "MOTION START" button to start the saved poses
+
+***If you want to delete the old memory in order to create new ones, click "MOTION CLEAR"***
+
+***Click "MOTION REPEAT ON" if you want to loop the motion***
+
+###########################################################
+###########################################################
+

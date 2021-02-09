@@ -1,0 +1,47 @@
+﻿Setup instructions:
+
+1. Download the following zip: “open_manipulator_save_and_load.tar”
+2. Extract the package into the main “src” folder
+3. In the command terminal, type:
+
+$ cd ~/catkin_ws && catkin_make
+
+##############################################################################
+
+Command Execution Instructions (to test python script):
+1. Launch the world in Gazebo
+
+$ roslaunch open_manipulator_gazebo open_manipulator_gazebo.launch
+
+2. Press play and on another terminal, activate the controller
+
+$ roslaunch open_manipulator_controller open_manipulator_controller.launch use_platform:=false
+
+3. Begin Hand Guiding
+(a) Execute "save_and_load launch" file
+
+$ roslaunch open_manipulator_save_and_load save_and_load.launch
+
+*ensure you have given permissions to your python file (1. cd to directory; 2. chmod +x save_and_load.py)
+
+(b) A menu will appear in your terminal as below:
+```
+You can select the below menu by the keyboard input.  
+---------------------------
+1. Start to save joint data
+2. Stop to save joint data
+3. Load to joint data
+---------------------------
+
+(c) Since you cant use your hand to guide the OM in Gazebo, use teleop manual control instead. In new terminal, type command:
+
+$ roslaunch open_manipulator_teleop open_manipulator_teleop_keyboard.launch
+
+(d) Go back to terminal that you ran your save_and_load launch command (make sure you click on it first). When ready, type “1” and the programme starts recording the movements of the OM
+
+(e) Go back to the “teleop” terminal, and move the OM in Gazebo using your keyboard. When done .....
+
+(f) Go back to the “save_and_load” terminal, and type “2” to stop the recording and to save the records into a file in the cfg folder
+
+(g) To command the OM to perform the recorded tasks, at the “save_and_load” terminal, type “3”. Observe that the OM will move by itself by loading the recorded file (i.e. the trajectories/actions that you teach the OM)  
+

@@ -1,0 +1,24 @@
+
+
+1. Launch the world in Gazebo
+
+$ roslaunch open_manipulator_gazebo open_manipulator_gazebo.launch
+
+2. Press play and on another terminal, activate the controller
+
+$ roslaunch open_manipulator_controller open_manipulator_controller.launch use_platform:=false
+
+***You have to do Steps 1 and 2 first before you can control the virtual robot via the following various methods
+
+
+############ Method 2 - Control via GUI ############
+
+To move OM in the Gazebo is the same as in actual situation for GUI control (covered previously in M3)
+
+(a) Open terminal and type:
+
+$ roslaunch open_manipulator_control_gui open_manipulator_control_gui.launch
+
+(b) This will open the GUI for the arm control
+
+(c) Click "Timer Start" and then "Actuator enable" and you can start controlling the arm; see Gazebo window for response

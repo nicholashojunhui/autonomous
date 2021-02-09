@@ -1,0 +1,20 @@
+
+For this project, you are required to write 2 Python files and 1 launch file with the
+following details:
+
+1. autonomous_exploring.py
+2. Project3.launch
+3. P3_path_planning.py
+
+*Use turtlebot3_world map for Project 3
+
+Objective for Part(a):
+The autonomous_exploring.py when executed will allow the TB3 to autonomously explore the map while avoiding collisions (i.e. similar to turtlebot3_simulation.launch execution)
+
+***Hint: Come out with a simple algorithm first
+
+Objective for Part(b):
+
+(A) The launch file when executed will open the RViz, then run the initial pose node (i.e. initial_pose.py), which enables the TB3 to first initiate the pose estimate for you
+
+(B) And lastly, run the path planning node (i.e. P4_path_planning.py), which enables the TB3 to follow the desired path; the desired path is illustrated in the slides

@@ -1,0 +1,17 @@
+1. Run roscore on one terminal
+
+$ roscore
+
+2. Prepare the setup for the OM: Connect the wires, switch on the power, and manually bring up the OM
+
+3. On another terminal, activate the controller; this will lock the motors
+
+$ roslaunch open_manipulator_controller open_manipulator_controller.launch
+
+4. On another terminal, activate the GUI node; this will open the GUI for the arm control
+
+$ roslaunch open_manipulator_control_gui open_manipulator_control_gui.launch
+
+5. Click “Timer Start” & “Actuator enable” and you can start controlling the arm
+
+6. Click "Task space" to manipulate the arm using IK by entering the X-Y-Z values for your end effector’s desired position; click “Send” when done and observe the arm in Gazebo for response

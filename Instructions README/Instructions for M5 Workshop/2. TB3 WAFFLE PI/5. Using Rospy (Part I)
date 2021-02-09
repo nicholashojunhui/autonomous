@@ -1,0 +1,51 @@
+
+#######################################################
+################ MOVING TB3 in CIRCLES ################
+#######################################################
+
+1. Open terminal and type:
+
+$ roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+
+2. Open new terminal and type:
+
+$ rosrun autonomous trajectory.py
+
+*ensure that your codes are in the src folder of your autonomous package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x trajectory.py)
+
+#######################################################
+################# Getting Laser Data ##################
+#######################################################
+
+1. Open terminal and type:
+
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+2. Open new terminal and type:
+
+$ rosrun autonomous laser_data.py
+
+*ensure that your codes are in the src folder of your autonomous package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x laser_data.py)
+
+#######################################################
+########## Avoid Obstacle using Laser Data ############
+#######################################################
+
+1. Open terminal and type:
+
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+2. Open new terminal and type:
+
+$ rosrun autonomous avoid_obstacle.py
+
+*ensure that your codes are in the src folder of your autonomous package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x avoid_obstacle.py)
+
+#######################################################
+
+
+
+

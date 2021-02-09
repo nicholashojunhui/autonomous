@@ -1,0 +1,27 @@
+
+[Path Planning]:
+
+1. Open terminal and type:
+
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+2. Open new terminal and type:
+
+$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/TB3_WORLD.yaml
+
+*Ensure you still have the map that you have saved previously in the HOME directory
+
+3. After RViz is launched, initiate the pose estimate manually or via python file execution
+
+4. Open new terminal and type:
+
+$ rosrun autonomous path_planning.py
+
+OR 
+
+$ rosrun autonomous path_planning2.py
+
+*ensure that your python codes are in the src folder of your autonomous package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x path_planning.py)
+
+5. Observe in the RViz application and/or Gazebo that the TB3 will first move to the 1st waypoint, later move to the 2nd waypoint, and back to the 1st; this behaviour will be looped until the file stops running (clt c)

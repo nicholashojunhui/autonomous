@@ -1,0 +1,27 @@
+
+Note for Project 2:
+
+- For Manual Control, use the current OpenCR configuration. Use the RC100 controller as explained in the slides
+
+- For Hand Guiding, use the current OpenCR configuration. Refer to the explanations in the slides and/or README instructions
+
+- For FK/IK Techniques, use the ROS configuration; remember to reconfigure and upload the correct firmware using Arduino. You can use the given Project2.py as a reference template for this part
+
+################# RECAP on procedures to rosrun #################
+
+1. Run roscore on one terminal
+$ roscore
+
+2. Prepare the setup for the OM: Connect the wires, switch on the power, and manually bring up the OM
+
+3. On another terminal, activate the controller; this will lock the motors
+$ roslaunch open_manipulator_controller open_manipulator_controller.launch
+
+4. On another terminal, ROSRUN/ROSLAUNCH your codes
+$ rosrun autonomous Project2.py 
+
+(for FK/IK)
+*ensure that your codes are in the src folder of your autonomous package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x your_codes.py)
+
+

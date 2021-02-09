@@ -1,0 +1,26 @@
+
+[RECAP]:
+
+You have to launch your Gazebo first (to load TB3 in the TB3 World) first before you launch any executable files; e.g. the python file autonomous_exploring.py OR the launch file, Project3.launch
+
+[Example]:
+
+1. Launch Gazebo (to load TB3 in the TB3 World):
+
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+2. Execute launch file to execute required tasks:
+
+$ rosrun autonomous autonomous_exploring.py
+
+OR
+
+$ roslaunch autonomous Project3.launch map_file:=$HOME/TB3_WORLD.yaml
+
+*** Meaning you are only required to type 2 command lines on 2 separate terminals to perform the given tasks
+
+*ensure that your python codes are in the src folder of your autonomous package
+*ensure that your launch files are in the launch folder of your autonomous package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x P4_path_planning.py)
+
+

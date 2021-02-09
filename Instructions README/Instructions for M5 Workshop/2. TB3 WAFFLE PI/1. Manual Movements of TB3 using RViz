@@ -1,0 +1,13 @@
+
+1. Using fake node in RViz, type in Terminal:
+
+$ roslaunch turtlebot3_fake turtlebot3_fake.launch
+
+
+2. In a new terminal, type the following command to move the TB3 manually:
+
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+Use the keyboard (i.e. w,s,x,a,d) to move the robot around
+
+

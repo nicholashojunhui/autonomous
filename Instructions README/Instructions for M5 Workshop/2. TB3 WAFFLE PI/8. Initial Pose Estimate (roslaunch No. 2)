@@ -1,0 +1,20 @@
+
+[Initial pose estimate] (Using roslaunch):
+
+Subscribing /odom data for initial pose positions
+
+1. Open terminal and type:
+
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+2. Open new terminal and type:
+
+$ roslaunch autonomous initial_pose2.launch map_file:=$HOME/TB3_WORLD.yaml
+
+*Ensure you still have the map that you have saved previously in the HOME directory
+*This launch file involves the following node: initial_pose2.py
+
+*ensure that your python codes are in the src folder of your autonomous package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x initial_pose2.py)
+
+3. Observe in the RViz application that the TB3’s pose estimate will be automatically executed

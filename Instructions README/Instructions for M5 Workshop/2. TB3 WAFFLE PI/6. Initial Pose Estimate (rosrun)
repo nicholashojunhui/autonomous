@@ -1,0 +1,23 @@
+
+[Initial pose estimate] (using only rosrun)
+
+1. Open terminal and type:
+
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+2. Open new terminal and type:
+
+$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/TB3_WORLD.yaml
+
+*Ensure you still have the map that you have saved previously in the HOME directory
+
+4. After RViz is launched, open new terminal and type:
+
+$ rosrun autonomous initial_pose.py
+
+*ensure that your codes are in the src folder of your autonomous package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x initial_pose.py)
+
+5. Observe in the RViz application that the TB3’s pose estimate will be automatically executed
+
+

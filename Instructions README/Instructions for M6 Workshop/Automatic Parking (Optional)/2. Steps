@@ -1,0 +1,41 @@
+
+1. On the Remote PC, run roscore (Important: do NOT run roscore under the TB3 PC!!!)
+
+$ roscore
+
+2. On the Remote PC, open new terminal and type the following commands to access TB3 PC:
+
+$ ssh pi@192.168.XX.XX
+
+You will see in this terminal that you are connected to the pi’s terminal
+
+3. On the TB3 PC (using the linked pi terminal), type the following to bring up basic packages to start TB3:
+
+$ roslaunch turtlebot3_bringup turtlebot3_robot.launch
+
+4. On the Remote PC, open new terminal and type the following commands to access TB3 PC:
+
+$ ssh pi@192.168.XX.XX
+
+5. Activate rpicamera
+
+$ roslaunch turtlebot3_bringup turtlebot3_rpicamera.launch
+
+6. Compressed image should be transform to raw image:
+
+$ rosrun image_transport republish compressed in:=raspicam_node/image raw out:=raspicam_node/image
+
+7. On the Remote PC, carry out the image rectification:
+
+$ ROS_NAMESPACE=raspicam_node rosrun image_proc image_proc image_raw:=image _approximate_s=true _queue_size:=20
+
+8. Position the TB3 near the "parking lot" (i.e. in front of the AR Marker)
+
+9. On the Remote PC, start the AR Marker detection
+
+$ roslaunch turtlebot3_automatic_parking_vision turtlebot3_automatic_parking_vision.launch
+
+- The RViz application will automatically run and the TB3 will automatically search and park in front of the AR marker
+
+
+

@@ -1,0 +1,31 @@
+
+Step 1 - Launch TurtleBot3 with OM in Gazebo's empty_world
+
+$ roslaunch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch
+
+Step 2 - Press play in Gazebo. Then in a new terminal, activate the move_group node by typing the command to use the Moveit feature:
+
+$ roslaunch turtlebot3_manipulation_moveit_config move_group.launch
+
+If the node is launched successfully, the following message will be printed in the terminal: “You can start planning now!”
+
+***Important: you must run both Gazebo and move_group nodes first before you can control the OM on the TB3
+
+Step 3 - In a new terminal, type the command:
+
+$ rosrun autonomous OM_moveit.py
+
+*ensure that your codes are in the src folder of your autonomous package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x OM_moveit.py)
+
+*Note that for the TB3_with_OM robot model, the system is created as such that you cannot control the OM with messages (i.e. service, publish). Instead, you have to control it with Move Group nodes. The OM_moveit.py file utilizes the MoveIt interface to control the mounted OM.
+
+• The OM will move to a point determined by the joint angles. To alter these joint angles, open the python file, change the values for the following variables; under the sub-functions arm_joints()
+
+joint_goal[X]
+
+• To alter the gripper angle, change the value for the following variable (-0.01 for fully close and 0.01 for fully open); under the sub-functions gripper_open/close()
+
+joint_grip[0]
+
+

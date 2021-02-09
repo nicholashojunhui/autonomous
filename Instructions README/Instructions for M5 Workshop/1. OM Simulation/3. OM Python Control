@@ -1,0 +1,34 @@
+
+
+1. Launch the world in Gazebo
+
+$ roslaunch open_manipulator_gazebo open_manipulator_gazebo.launch
+
+2. Press play and on another terminal, activate the controller
+
+$ roslaunch open_manipulator_controller open_manipulator_controller.launch use_platform:=false
+
+***You have to do Steps 1 and 2 first before you can control the virtual robot via the following various methods
+
+
+############ Method 3 - Control via Python ############
+
+To move OM in the Gazebo is the same as in actual situation. For actual OM/Virtual OM, you have to service topics to move the arm (covered previously in M3 and in RBS Course)
+
+Open terminal and type:
+
+$ rosrun autonomous control_om.py
+
+*ensure that your codes are in the src folder of your autonomous package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x your_codes.py)
+
+The OM will move to a point determined by the joint angles. To alter these joint angles, open the python file, find the following line and change the angles in it; these angles are in radians:
+
+joint_position.position = [-0.5, 0, 0.5, -0.5]
+
+To alter the gripper angles, alter the following line (-0.01 for fully close and 0.01 for fully open):
+
+gripper_position.position = [0.01]
+
+
+

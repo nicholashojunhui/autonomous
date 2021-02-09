@@ -1,0 +1,42 @@
+
+
+1. Launch Empty World:
+
+$ roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+
+
+2. *** Launch TurtleBot3 World (Most Important) ****:
+
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+
+3. ROS Basics (RECAP). In new terminals, type the following commands (one by one):
+
+(a) $ rostopic list
+(b) $ rosservice list
+(c) $ rostopic echo /odom -n1
+(d) $ rostopic echo /imu -n1
+(e) $ rqt
+(f) $ rqt_image_view
+
+
+4. In a new terminal, type the following command to move the TB3 manually:
+
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+Use the keyboard (i.e. w,s,x,a,d) to move the robot around
+
+
+5. Ctrl-c the running teleop node to stop the program. In new terminal, type the following command to activate autonomous navigation and obstacle avoidance:
+
+$ roslaunch turtlebot3_gazebo turtlebot3_simulation.launch
+
+
+6. While the TB3 is moving autonomously around the TB3 virtual world, we can open RViz to visualize the LaserScan topic; in a new terminal, type:
+
+$ roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch
+
+
+
+
+

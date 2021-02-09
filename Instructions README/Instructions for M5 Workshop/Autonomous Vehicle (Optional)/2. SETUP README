@@ -1,0 +1,24 @@
+
+[SETUP]
+
+1. Navigate to
+
+/home/accountname/cakin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/launch
+
+
+2. Copy and paste the given file: “turtlebot3_autorace.launch” in this folder
+
+
+3. Navigate to
+
+/home/accountname/cakin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/worlds
+
+
+4. Copy and paste the given file: “turtlebot3_autorace_2.world” in this folder
+
+
+
+
+
+
+

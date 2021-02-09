@@ -1,0 +1,22 @@
+
+[INSTALLATION] [SKIP IF YOU HAVE ALREADY INSTALLED]
+
+1. Install AutoRace packages:
+
+$ cd ~/catkin_ws/src/
+
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_autorace.git
+
+$ cd ~/catkin_ws && catkin_make
+
+
+2. Install Additional Dependent Packages:
+
+$ sudo apt-get install ros-kinetic-image-transport ros-kinetic-cv-bridge ros-kinetic-vision-opencv python-opencv libopencv-dev ros-kinetic-image-proc
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+1. Run roscore on one terminal
+
+$ roscore
+
+2.Prepare the setup for the OM: Connect the wires, switch on the power, and manually bring up the OM
+
+3. On another terminal, activate the controller; this will lock the motors
+
+$ roslaunch open_manipulator_controller open_manipulator_controller.launch
+
+4a. On another terminal, activate the setkinematicspose node; this will move the OM to the positions you have set
+
+$ rosrun autonomous setkinematicspose.py
+
+*ensure that your codes are in the src folder of your autonomous package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x setkinematicspose.py)
+
+4b. On another terminal, activate the setkinematicspose_withorientation node; this will move the OM to the positions and orientations you have set
+
+$ rosrun autonomous setkinematicspose_withorientation.py
+
+*ensure that your codes are in the src folder of your autonomous package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x setkinematicspose_withorientation.py)
+
+

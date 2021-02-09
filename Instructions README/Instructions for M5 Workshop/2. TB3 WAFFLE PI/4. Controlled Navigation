@@ -1,0 +1,59 @@
+
+#################################################################
+#################################################################
+For Virtual Controlled Navigation, 2 Steps:
+
+Step 1 - Launch Gazebo in TurtleBot3 World
+
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+Step 2a - Execute Controlled Navigation in a new terminal
+
+$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/TB3_WORLD.yaml
+
+*Remember to change the name of your map to the correct one
+
+Step 2b - Click on “2D Pose Estimate” and set the correct initial position for the TB3 (refer to slides for illustration on this)
+
+Step 2c - Click on “2D NAV Goal” and set the target destination for the TB3 (refer to slides for illustration on this); the green arrow represent the direction of TB3 at its end state
+
+Step 2d -  The tool will create a path for the TB3 to follow to reach to the end goal. The bot will follow the created path to its destination. The path may be adjusted automatically to its optimum during the TB3’s journey.
+
+*** Note that you might want to launch the teleop node to rotate/move the TB3 around first to remove any unwanted cost maps before setting the 2D NAV Goal (refer to slides):
+
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+#################################################################
+#################################################################
+*** Displaying Camera in RViz ***
+Note that you can display the TB3’s camera while RViz is launched during SLAM or NAVIGATION:
+
+1. While RViz is launched, go to “Displays”
+
+2. Expand “Image” topic at the left panel
+
+3. Under “Image Topic”, change topic to “/camera/rgb/image_raw”; you can just click on it and scroll down to find this topic and click on this option
+
+4. Under “Transport Hint”, change type to “raw” 
+
+***Your topic monitor (i.e. type rqt in a new terminal) will be able to do the same thing as well
+
+#################################################################
+#################################################################
+*** Upgrading Gazebo (if your camera cannot work in RViz) ***
+
+Note that your current Gazebo version (i.e. 7.0.0) might not be able to support the image topic well. Hence, you must update your Gazebo to version 7.16.0 to enable the image topic; follow the following steps to update your Gazebo to version 7.16.0:
+
+#### change to `lsb_release -cs` instead of 'lsb_release -cs' ####
+
+- $ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+
+- $ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+
+- $ sudo apt-get update
+
+- $ sudo apt-get install gazebo7 -y
+
+#################################################################
+#################################################################
+

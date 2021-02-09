@@ -1,0 +1,20 @@
+
+
+1. Launch the world in Gazebo
+
+$ roslaunch open_manipulator_gazebo open_manipulator_gazebo.launch
+
+2. Press play and on another terminal, activate the controller
+
+$ roslaunch open_manipulator_controller open_manipulator_controller.launch use_platform:=false
+
+***You have to do Steps 1 and 2 first before you can control the virtual robot via the following various methods
+
+############ Method 1 - Manual Control ############
+
+Type (in New Terminal):
+
+$ roslaunch open_manipulator_teleop open_manipulator_teleop_keyboard.launch
+
+If the node is successfully launched, the instructions will appear in the terminal window. Use your keyboard keys to control the arm; response will reflect in the Gazebo. Close terminal when done
+

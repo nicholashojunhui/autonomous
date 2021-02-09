@@ -1,0 +1,63 @@
+
+[PROCEDURES]:
+
+1. Run AutoRace Gazebo; you will see the AutoRace map in Gazebo
+
+$ roslaunch turtlebot3_gazebo turtlebot3_autorace.launch
+
+2. Run Mission Launch; you will see the various additional components (i.e. traffic light, Parked TurtleBot3, Toll Gate) in Gazebo
+
+$ roslaunch turtlebot3_gazebo turtlebot3_autorace_mission.launch
+
+
+3. Run AutoRace Launch
+
+(A) Virtual calibration of camera
+
+$ export GAZEBO_MODE=true
+
+$ export AUTO_IN_CALIB=action
+
+$ roslaunch turtlebot3_autorace_camera turtlebot3_autorace_intrinsic_camera_calibration.launch
+
+
+(B) Type in New Terminal
+
+$ export AUTO_EX_CALIB=action
+
+$ export AUTO_DT_CALIB=action
+
+$ export TURTLEBOT3_MODEL=burger
+
+$ roslaunch turtlebot3_autorace_core turtlebot3_autorace_core.launch
+
+
+(C) Type in New Terminal
+
+$ rostopic pub -1 /core/decided_mode std_msgs/UInt8 "data: 2"
+
+
+4. You may go to rqt Image View to observe the various detection scenes
+
+$ rqt
+
+Once rqt open, navigate to Plugins >> Visualization >> Image View
+
+Select the various options under Image View to observe detection scenes
+
+5. Check out the nodes that control the autonomous movements for AutoRace; go to the following folder:
+
+/home/accountname/cakin_ws/src/turtlebot3_autorace/turtlebot3_autorace_core/nodes
+
+(A) Decision-making node: core_node_decider.py
+
+(B) Main Controller node: core_node_controller.py
+
+(C) Control Mission node: core_node_mission.py
+
+
+
+
+
+
+

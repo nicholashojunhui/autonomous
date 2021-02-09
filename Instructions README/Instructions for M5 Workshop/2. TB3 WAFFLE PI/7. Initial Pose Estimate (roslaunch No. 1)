@@ -1,0 +1,18 @@
+
+[Initial pose estimate] (Using roslaunch to reduce steps):
+
+1. Open terminal and type:
+
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+2. Copy and paste given launch files in your “autonomous” package (i.e. initial_pose.launch, initial_pose2.launch); you may create a launch folder to place all your launch files
+
+3. Open new terminal and type:
+
+$ roslaunch autonomous initial_pose.launch map_file:=$HOME/TB3_WORLD.yaml
+
+*Ensure you still have the map that you have saved previously in the HOME directory
+
+4. Observe in the RViz application that the TB3’s pose estimate will be automatically executed
+
+

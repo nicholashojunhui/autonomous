@@ -1,0 +1,28 @@
+
+Step 1 - Launch TurtleBot3 with OM in Gazebo's empty_world
+
+$ roslaunch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch
+
+Step 2 - Press play in Gazebo. Then in a new terminal, activate the move_group node by typing the command to use the Moveit feature:
+
+$ roslaunch turtlebot3_manipulation_moveit_config move_group.launch
+
+If the node is launched successfully, the following message will be printed in the terminal: “You can start planning now!”
+
+***Important: you must run both Gazebo and move_group nodes first before you can control the OM on the TB3
+
+Step 3 - In a new terminal, type the command:
+
+$ roslaunch turtlebot3_manipulation_gui turtlebot3_manipulation_gui.launch
+
+*Once the GUI is fully loaded, you can control the mounted OM using the GUI panel
+
+4. Click “Timer Start” & “Actuator enable” and you can start controlling the arm
+
+5a. Click "Joint space" to manipulate the arm using FK by entering the desired joint values; click “Send” when done and observe the arm in Gazebo for response
+
+5b. Click "Task space" to manipulate the arm using IK by entering the X-Y-Z values for your end effector’s desired position; click “Send” when done and observe the arm in Gazebo for response
+
+5c. You may try clicking on "init pose" and "Home pose" to obtain the default poses
+
+
