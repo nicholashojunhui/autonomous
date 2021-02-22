@@ -1,10 +1,15 @@
 ﻿Setup instructions:
 
-1. Download the following zip: “open_manipulator_save_and_load.tar”
-2. Extract the package into the main “src” folder
-3. In the command terminal, type:
+1. Change to the source space directory of the catkin workspace:
+$ cd ~/catkin_ws/src
 
+2. Git Clone the open_manipulator_save_and_load package:
+$ git clone https://github.com/nicholashojunhui/open_manipulator_save_and_load.git
+
+3. Build the packages in the catkin workspace:
 $ cd ~/catkin_ws && catkin_make
+
+4. Go to catkin_ws/src/open_manipulator_save_and_load/nodes and make python file executable
 
 ##############################################################################
 
