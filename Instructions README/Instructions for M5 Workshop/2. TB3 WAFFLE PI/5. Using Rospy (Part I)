@@ -15,6 +15,24 @@ $ rosrun autonomous trajectory.py
 *ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x trajectory.py)
 
 #######################################################
+####### MOVING TB3 according to a fixed distance ######
+############### using position feedback ###############
+#######################################################
+
+1. Open terminal and type:
+
+$ roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+
+2. Open new terminal and type:
+
+$ rosrun autonomous move_turtlebot_distance.py 0.1 0.0 1.0
+
+You can choose different inputs [linear.x, angular.z, distance] in your command line
+
+*ensure that your codes are in the src folder of your autonomous package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x trajectory.py)
+
+#######################################################
 ################# Getting Laser Data ##################
 #######################################################
 
