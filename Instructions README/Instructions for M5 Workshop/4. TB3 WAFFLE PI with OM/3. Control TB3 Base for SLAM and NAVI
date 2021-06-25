@@ -1,15 +1,8 @@
 
-[Setup]:
-
-Firstly, navigate to the following directory:
-/home/catkin_ws/src/turtlebot3_manipulation_simulations/turtlebot3_manipulation_gazebo/launch
-
-Copy and paste the given file in this folder:
+We will now use the following launch file:
 TB3_with_OM.launch
 
-This edited launch file allows you to use the TB3 world as your map in Gazebo for the TB3 with OM robot. 
-
-*Note that you may copy and paste this launch file in your autonomous package too (under launch folder). However, the command to launch the file will be slightly different (i.e. roslaunch autonomous TB3_with_OM.launch instead of the below commands)
+This edited launch file allows you to use the TB3 world as your map in Gazebo for the TB3 with OM robot.
 
 
 
@@ -17,9 +10,7 @@ This edited launch file allows you to use the TB3 world as your map in Gazebo fo
 
 Step 1 - Launch the TB3 with arm in the TB3 World map in Gazebo
 
-$ roslaunch turtlebot3_manipulation_gazebo TB3_with_OM.launch
-
-OR $ roslaunch autonomous TB3_with_OM.launch (if you put in autonomous package)
+$ roslaunch autonomous TB3_with_OM.launch
 
 Step 2 - Click Play button
 
@@ -43,7 +34,7 @@ $ rosrun map_server map_saver -f ~/TB3_WORLD
 
 Step 1 - Launch Gazebo in TB3 World
 
-$ roslaunch turtlebot3_manipulation_gazebo TB3_with_OM.launch
+$ roslaunch autonomous TB3_with_OM.launch
 
 Step 2 - Click Play button
 
