@@ -3,7 +3,7 @@
 
 1. Load TB3 with OM in TB3 World in Gazebo
 
-$ roslaunch turtlebot3_manipulation_gazebo TB3_with_OM.launch
+$ roslaunch autonomous TB3_with_OM.launch
 
 2. Run launch file example to (A) activate OM control (via move_group), (B) to activate the navigation node, and (C) to activate the pick_move_place node (i.e. via pick_move_place.py), which make OM “pick” first, after which move TB3 to a certain location, and lastly to make OM “place”
 
