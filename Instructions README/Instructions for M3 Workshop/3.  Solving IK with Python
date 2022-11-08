@@ -8,6 +8,9 @@ $ roscore
 
 $ roslaunch open_manipulator_controller open_manipulator_controller.launch
 
+***Note: If your port (e.g. ACM0) is denied permission, on new terminal type:
+	$ sudo chmod a+rw /dev/ttyACM0
+
 4a. On another terminal, activate the setkinematicspose node; this will move the OM to the positions you have set
 
 $ rosrun autonomous setkinematicspose.py
