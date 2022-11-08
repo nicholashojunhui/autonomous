@@ -17,6 +17,9 @@ $ roscore
 3. On another terminal, activate the controller; this will lock the motors
 $ roslaunch open_manipulator_controller open_manipulator_controller.launch
 
+***Note: If your port (e.g. ACM0) is denied permission, on new terminal type:
+	$ sudo chmod a+rw /dev/ttyACM0
+
 4. On another terminal, ROSRUN/ROSLAUNCH your codes
 $ rosrun autonomous Project2.py 
 
