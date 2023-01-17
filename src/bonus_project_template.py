@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy	#import the python library for ROS
 
@@ -56,16 +56,16 @@ def moveTB3():
 	if activity == "Straight":
             change = np.random.choice(transitionName[0],replace=True,p=transitionMatrix[0])
             if change == "SS":
-		GoStraight()
-                pass
+               GoStraight()
+               pass
             elif change == "SR":
-                TurnRight()
-		activity = "Right"
+               TurnRight()
+               activity = "Right"
             else:
-                TurnLeft()
-		activity = "Left"
+               TurnLeft()
+               activity = "Left"
 
-        elif activity == "Right":
+	elif activity == "Right":
             ### To fill in:
 
 
@@ -73,7 +73,7 @@ def moveTB3():
 
                 
 
-        elif activity == "Left":
+	elif activity == "Left":
             ### To fill in:
 
 
@@ -90,13 +90,13 @@ def callback(msg):
 	### To check on relevant laser scan data ###
 	print('=========================================')
 	print('s1 [0]')
-	print msg.ranges[0]
+	print(msg.ranges[0])
 
 	print('s2 [45]')
-	print msg.ranges[45]
+	print(msg.ranges[45])
 
 	print('s3 [315]')
-	print msg.ranges[315]
+	print(msg.ranges[315])
 
 	### Constructing codes to represent collision avoidance algorithm ####
 	if msg.ranges[0] >= 0.5 and msg.ranges[45] >= 0.5 and msg.ranges[315] >= 0.5:
@@ -115,7 +115,7 @@ rospy.init_node('obstacle_avoidance')			# Initiate a Node called 'obstacle_avoid
 sub = rospy.Subscriber('/scan', LaserScan, callback)
 
 #Create a Publisher object to move the TB3
-pub = rospy.Publisher('/cmd_vel', Twist)
+pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
 move = Twist()
 
 # spin() simply keeps python from exiting until this node is stopped

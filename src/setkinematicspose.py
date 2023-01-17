@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # works for actual OM ONLY!
 
 import rospy					#import the python library for ROS
@@ -9,22 +9,10 @@ from open_manipulator_msgs.srv import SetKinematicsPose
 from geometry_msgs.msg import Pose
 import math
 
-def callback(msg):				#define a function called 'callback' that receives a parameter named 'msg'
-	print "positions:"
-	print msg.pose.position.x
-	print msg.pose.position.y
-	print msg.pose.position.z
-
-	print "orientations:"			
-	print msg.pose.orientation.w
-	print msg.pose.orientation.x
-	print msg.pose.orientation.y
-	print msg.pose.orientation.z
-
 def talker():
 	rospy.init_node('OM_publisher')	#Initiate a Node called 'OM_publisher'
 	set_kinematics_position = rospy.ServiceProxy('/goal_joint_space_path_to_kinematics_position', SetKinematicsPose)
-        set_gripper_position = rospy.ServiceProxy('/goal_tool_control', SetJointPosition)
+	set_gripper_position = rospy.ServiceProxy('/goal_tool_control', SetJointPosition)
 	
 	#while not rospy.is_shutdown():
 	kinematics_pose = KinematicsPose()
@@ -32,8 +20,6 @@ def talker():
 	kinematics_pose.pose.position.y = 0.0
 	kinematics_pose.pose.position.z = 0.194
 	resp1 = set_kinematics_position('planning_group', 'gripper', kinematics_pose, 3)
-
-	sub_kinematics_pose = rospy.Subscriber('/gripper/kinematics_pose', KinematicsPose, callback)
 
 	gripper_position = JointPosition()
 	gripper_position.joint_name = ['gripper']
@@ -46,9 +32,6 @@ def talker():
 	kinematics_pose.pose.position.y = 0.276
 	kinematics_pose.pose.position.z = 0.192
 	resp1 = set_kinematics_position('planning_group', 'gripper', kinematics_pose, 3)
-
-	rospy.sleep(3)
-	sub_kinematics_pose = rospy.Subscriber('/gripper/kinematics_pose', KinematicsPose, callback)
 	
 
 if __name__== '__main__':

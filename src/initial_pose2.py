@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
  
 import rospy
 from geometry_msgs.msg import PoseWithCovarianceStamped
@@ -6,7 +6,7 @@ from tf.transformations import quaternion_from_euler
 from nav_msgs.msg import Odometry
 
 def callback(msg):				#define a function called 'callback' that receives a parameter named 'msg'
-	print msg.pose.pose
+	print(msg.pose.pose)
 	
 	global px, py, pz, ox, oy, oz, ow
 	px = msg.pose.pose.position.x
@@ -36,6 +36,6 @@ checkpoint.pose.pose.orientation.y = oy
 checkpoint.pose.pose.orientation.z = oz
 checkpoint.pose.pose.orientation.w = ow
  
-print checkpoint
+print(checkpoint)
 pub.publish(checkpoint)
 	

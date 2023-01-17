@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # works for actual OM ONLY!
 
 import rospy					#import the python library for ROS
@@ -12,7 +12,7 @@ import math
 def talker():
 	rospy.init_node('OM_publisher')	#Initiate a Node called 'OM_publisher'
 	set_kinematics_position = rospy.ServiceProxy('/goal_joint_space_path_to_kinematics_pose', SetKinematicsPose)
-        set_gripper_position = rospy.ServiceProxy('/goal_tool_control', SetJointPosition)
+	set_gripper_position = rospy.ServiceProxy('/goal_tool_control', SetJointPosition)
 	
 	#while not rospy.is_shutdown():
 	kinematics_pose = KinematicsPose()

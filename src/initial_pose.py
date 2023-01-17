@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
  
 import rospy
 from geometry_msgs.msg import PoseWithCovarianceStamped
@@ -22,6 +22,6 @@ checkpoint.pose.pose.orientation.y = 0.00158963960308
 checkpoint.pose.pose.orientation.z = 0.00275331003065
 checkpoint.pose.pose.orientation.w = 0.999994946134
  
-print checkpoint
+print(checkpoint)
 pub.publish(checkpoint)
 	

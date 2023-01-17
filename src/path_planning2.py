@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy
 import os,sys
@@ -61,10 +61,10 @@ def goal_pose(pose):
 # Main program starts here
 if __name__ == '__main__':
 	client = actionlib.SimpleActionClient('move_base', MoveBaseAction)
-    	client.wait_for_server()
+	client.wait_for_server()
 
     	# Loop until ^c; delete this line if you want the TB3 to stop at the last waypoint
-    	while not rospy.is_shutdown():
+	while not rospy.is_shutdown():
 
         	# repeat the waypoints over and over again
         	for pose in waypoints:
