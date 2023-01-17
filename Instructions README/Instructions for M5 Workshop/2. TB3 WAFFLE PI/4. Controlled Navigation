@@ -40,20 +40,5 @@ Note that you can display the TB3’s camera while RViz is launched during SLAM 
 
 #################################################################
 #################################################################
-*** Upgrading Gazebo (if your camera cannot work in RViz) ***
 
-Note that your current Gazebo version (i.e. 7.0.0) might not be able to support the image topic well. Hence, you must update your Gazebo to version 7.16.0 to enable the image topic; follow the following steps to update your Gazebo to version 7.16.0:
-
-#### change to `lsb_release -cs` instead of 'lsb_release -cs' ####
-
-- $ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
-
-- $ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-
-- $ sudo apt-get update
-
-- $ sudo apt-get install gazebo7 -y
-
-#################################################################
-#################################################################
 

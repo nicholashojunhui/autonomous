@@ -12,7 +12,7 @@ $ cd ~/catkin_ws && catkin_make
 
 2. Install Additional Dependent Packages:
 
-$ sudo apt-get install ros-kinetic-image-transport ros-kinetic-cv-bridge ros-kinetic-vision-opencv python-opencv libopencv-dev ros-kinetic-image-proc
+$ sudo apt-get install ros-noetic-image-transport ros-noetic-cv-bridge ros-noetic-vision-opencv python3-opencv libopencv-dev ros-noetic-image-proc
 
 
 
