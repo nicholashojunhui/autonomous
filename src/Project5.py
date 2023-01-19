@@ -162,21 +162,32 @@ def shutdown():
     place()
     rate.sleep()
 
-###########################################################################################
-### Complete move function below; this function moves the TB3 to follow the yellow line ###
-###########################################################################################
-
 def move():
-    ##### Hint: Call the LineFollower class, then call the MoveTB3 class, and lastly configure a suitable condition under a while loop to stop the TB3 when it is at the end of the line.
     error_1 = 0
     error_2 = 0
     error_x = 0
     
+    line_follower_object = LineFollower()
+    moveTB3_object = MoveTB3()
     
+    global rate
+    rate = rospy.Rate(10)
+
+    global end_of_line
+    end_of_line = False
     
-    
-    
-    
+    while not end_of_line:
+        if cx < 250 and cy > 300:
+            rospy.loginfo("Initiate STOP PROGRAMME")        
+            moveTB3_object.clean_class()
+            cv2.destroyAllWindows()
+            rospy.loginfo("shutdown time!")
+            end_of_line = True
+            print('end of line status when no yellow',end_of_line)
+            rospy.on_shutdown(shutdown)
+
+        else:
+            rate.sleep()
 
 ############################ Defining Manipulation Parameters ############################ 
 
@@ -286,92 +297,100 @@ class MoveGroupPythonInteface(object):
 
 
   def Left(self):
-    ##############################################################################
-    ##### To complete function here; this function moves the arm to the left #####
-    ##############################################################################
 
+    group = self.group
+
+    joint_goal = group.get_current_joint_values()
+    joint_goal[0] = 1.571
+    joint_goal[1] = 0
+    joint_goal[2] = 0
+    joint_goal[3] = 0
     
-    
-    
-    
+    group.go(joint_goal, wait=True)
+
+    group.stop()
+
+    current_joints = self.group.get_current_joint_values()
     return all_close(joint_goal, current_joints, 0.01)
 
   def Down(self):
 
-    #######################################################################
-    ##### To complete function here; this function moves the arm down #####
-    #######################################################################
+    group = self.group
 
-    
-    
+    joint_goal = group.get_current_joint_values()
+    joint_goal[0] = 1.571
+    joint_goal[1] = 0.526
+    joint_goal[2] = 0
+    joint_goal[3] = 0
 
-    
+    group.go(joint_goal, wait=True)
+
+    group.stop()
+
+    current_joints = self.group.get_current_joint_values()
     return all_close(joint_goal, current_joints, 0.01)
 
   def gripper_open(self):
-    ######################################################################
-    ##### To complete function here; this function opens the gripper #####  
-    ######################################################################
 
+    grip = self.grip
 
-    
+    joint_grip = grip.get_current_joint_values()
     joint_grip[0] = 0.005
     
-    
-    
+    grip.go(joint_grip, wait=True)
+
+    grip.stop()
+
+    current_grip = self.grip.get_current_joint_values()
     return all_close(joint_grip, current_grip, 0.01)
 
   def gripper_close(self):
-    #######################################################################
-    ##### To complete function here; this function closes the gripper #####
-    #######################################################################
 
+    grip = self.grip
 
-    
+    joint_grip = grip.get_current_joint_values()
     joint_grip[0] = -0.005
     
-    
+    grip.go(joint_grip, wait=True)
+
+    grip.stop()
+
+    current_grip = self.grip.get_current_joint_values()
     return all_close(joint_grip, current_grip, 0.01)
-
-
-########################################################################
-##### To complete pick function here; this function picks the item #####
-########################################################################
 
 def pick():
   try:
     # Setting up the moveit_commander ...
     move_OM = MoveGroupPythonInteface()
 
-    # Execute movement using 1st joint state goal: to move to left; Complete here to call the function, followed by a delay to allow time for the robot to complete its movements before the next step
-    
+    # Execute movement using 1st joint state goal; move to left ...
+    move_OM.Left()
+    time.sleep(7)
 
-    # Execute gripper open; Complete here to call the function, followed by a delay to allow time for the robot to complete its movements before the next step
-    
+    # Execute gripper open ...
+    move_OM.gripper_open()
+    time.sleep(3)
 
-    # Execute movement using 2nd joint state goal: to move down; Complete here to call the function, followed by a delay to allow time for the robot to complete its movements before the next step
-    
+    # Execute movement using 2nd joint state goal; move down ...
+    move_OM.Down()
+    time.sleep(7)
 
-    #Execute gripper close; Complete here to call the function, followed by a delay to allow time for the robot to complete its movements before the next step
-    
+    #Execute gripper close ...
+    move_OM.gripper_close()
+    time.sleep(3)
 
-    # Execute movement using 3rd joint state goal: to move up; Complete here to call the function, followed by a delay to allow time for the robot to complete its movements before the next step
-    
+    # Execute movement using 3rd joint state goal; move up ...
+    move_OM.Left()
+    time.sleep(7)
 
-    # Execute movement using 4th joint state goal: to face front; Complete here to call the function, followed by a delay to allow time for the robot to complete its movements before the next step
-    
-    
+    # Execute movement using 4th joint state goal; face front ...
+    move_OM.Front()
+    time.sleep(7)
 
   except rospy.ROSInterruptException:
     return
   except KeyboardInterrupt:
     return
-
-
-##########################################################################
-##### To complete place function here; this function places the item #####
-##########################################################################
-
 
 def place():
   try:
@@ -379,19 +398,24 @@ def place():
     move_OM = MoveGroupPythonInteface()
 
     # Execute movement using 1st joint state goal; move to left ...
-    
+    move_OM.Left()
+    time.sleep(7)
 
     # Execute movement using 2nd joint state goal; move down ...
-    
+    move_OM.Down()
+    time.sleep(7)
 
     # Execute gripper open ...
-    
+    move_OM.gripper_open()
+    time.sleep(3)
 
     # Execute movement using 3rd joint state goal; move up ...
-    
+    move_OM.Left()
+    time.sleep(7)
 
     # Execute movement using 4th joint state goal; face front ...
-    
+    move_OM.Front()
+    time.sleep(7)
 
   except rospy.ROSInterruptException:
     return

@@ -9,7 +9,7 @@ from move_robot_turtlebot3 import MoveTB3
 
 ################################################################################
 ################################################################################
-############################### FOR PHYSICAL TB3 ###############################
+############################### FOR VIRTUAL TB3 ################################
 ################################################################################
 ################################################################################
 
@@ -24,11 +24,11 @@ class LineFollower(object):
         self.bridge_object = CvBridge()
         
         # For Virtual robot:
-        #self.image_sub = rospy.Subscriber("/camera/rgb/image_raw",Image,self.camera_callback)
+        self.image_sub = rospy.Subscriber("/camera/rgb/image_raw",Image,self.camera_callback)
         
         # For Physical robot:
         #self.image_sub = rospy.Subscriber("/raspicam_node/image/compressed",Image,self.camera_callback)
-        self.image_sub = rospy.Subscriber("/raspicam_node/image",Image,self.camera_callback)
+        #self.image_sub = rospy.Subscriber("/raspicam_node/image",Image,self.camera_callback)
         
         self.moveTB3_object = MoveTB3()
 

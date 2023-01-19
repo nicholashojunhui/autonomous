@@ -21,8 +21,8 @@ def talker():
 	rospy.on_shutdown(shutdown)
 
 	while not rospy.is_shutdown():
-		move.linear.x = 0.3
-		move.angular.z = 0.3
+		move.linear.x = 0.1
+		move.angular.z = 0.1
 		pub.publish(move)
 		rospy.loginfo("Moving in Circles")
 		rate.sleep()

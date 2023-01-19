@@ -152,7 +152,7 @@ class MoveGroupPythonIntefaceTutorial(object):
     grip = self.grip
 
     joint_grip = grip.get_current_joint_values()
-    joint_grip[0] = 0.01
+    joint_grip[0] = 0.005
     
     grip.go(joint_grip, wait=True)
 
@@ -166,7 +166,7 @@ class MoveGroupPythonIntefaceTutorial(object):
     grip = self.grip
 
     joint_grip = grip.get_current_joint_values()
-    joint_grip[0] = -0.01
+    joint_grip[0] = -0.005
     
     grip.go(joint_grip, wait=True)
 

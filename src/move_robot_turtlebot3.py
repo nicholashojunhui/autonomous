@@ -22,13 +22,13 @@ class MoveTB3(object):
                                     
     def clean_class(self):
         # Stop Robot
-	rospy.loginfo("Initiate STOP ROBOT")  
+        rospy.loginfo("Initiate STOP ROBOT")  
         twist_object = Twist()
         twist_object.angular.z = 0.0
-	twist_object.linear.x = 0.0
+        twist_object.linear.x = 0.0
         self.move_robot(twist_object)
-	stop_robot = True
-	rospy.loginfo("STOPPING ROBOT")
+        stop_robot = True
+        rospy.loginfo("STOPPING ROBOT")
 
 def main():
     rospy.init_node('move_robot_node', anonymous=True)
