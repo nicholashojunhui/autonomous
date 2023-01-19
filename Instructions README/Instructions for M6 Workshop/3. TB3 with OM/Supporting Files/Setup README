@@ -1,0 +1,15 @@
+
+[Setup]:
+
+1. Unzip and copy “models” folder
+
+2. Navigate to Home >> .gazebo (type clt-H to review hidden files) >> models
+
+3. Paste all copied “models” folder in the .gazebo folder
+
+4. Next, copy all world files under the Maps folder
+
+5. And navigate to src >> turtlebot3_simulations >> turtlebot3_gazebo >> worlds
+
+6. Paste copied world files in this folder
+
