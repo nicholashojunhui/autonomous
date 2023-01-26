@@ -14,7 +14,7 @@ $ ssh ubuntu@192.168.XX.XX
 
 You will see in this terminal that you are connected to the pi’s terminal
 
-3. Manually change the date and time to the correct one [SAME AS YOUR MACHINE; IMPORTANT for SLAM!] 
+3. On the TB3 PC (using the linked pi terminal), manually change the date and time to the correct one [SAME AS YOUR MACHINE; IMPORTANT for SLAM!] 
 
 $ sudo date -s '202X-XX-XX XX:XX:00'
 
