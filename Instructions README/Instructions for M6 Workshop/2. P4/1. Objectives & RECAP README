@@ -69,21 +69,25 @@ $ ssh ubuntu@192.168.XX.XX
 
 You will see in this terminal that you are connected to the pi’s terminal
 
-3. On the TB3 PC (using the linked pi terminal), type the following to bring up basic packages to start TB3:
+3. On the TB3 PC (using the linked pi terminal), manually change the date and time to the correct one [SAME AS YOUR MACHINE; IMPORTANT for SLAM!] 
+
+$ sudo date -s '202X-XX-XX XX:XX:00'
+
+4. On the TB3 PC (using the linked pi terminal), type the following to bring up basic packages to start TB3:
 
 $ roslaunch turtlebot3_bringup turtlebot3_robot.launch
 
-4. On the Remote PC, open new terminal and type:
+5. On the Remote PC, open new terminal and type:
 
 $ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
 
-5. On the Remote PC, open new terminal and type the following to activate teleop node:
+6. On the Remote PC, open new terminal and type the following to activate teleop node:
 
 $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 
 - Move the robot around to explore the area and collect map data
 
-6. Once completed, on the Remote PC, open new terminal and type the following to save the map:
+7. Once completed, on the Remote PC, open new terminal and type the following to save the map:
 
 $ rosrun map_server map_saver -f ~/map
 
