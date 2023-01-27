@@ -14,7 +14,11 @@ $ ssh ubuntu@192.168.XX.XX
 
 You will see in this terminal that you are connected to the pi’s terminal
 
-3. On the TB3 PC (using the linked pi terminal), manually change the date and time to the correct one [SAME AS YOUR MACHINE; IMPORTANT for SLAM!] 
+3a. Check if the time and date are synchronized. If NO, go to Step 3b. If YES, proceed to Step 4
+
+$ sudo timedatectl
+
+3b. On the TB3 PC (using the linked pi terminal), manually change the date and time to the correct one [SAME AS YOUR MACHINE; IMPORTANT for SLAM!] 
 
 $ sudo date -s '202X-XX-XX XX:XX:00'
 
@@ -60,6 +64,3 @@ $ rosrun autonomous initial_pose2.py
 (c) Use the "2D Nav Goal" button to move the TB3 to a desired position and orientation
 
 ###############################################################
-
-
-
