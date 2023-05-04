@@ -29,7 +29,7 @@ You will realize that the OM will move the same way as part 4a. No change in arm
 
 4c. On another terminal, activate the setkinematicspose_withorientation_v2 node; this will move the OM to the poses you have set
 
-setkinematicspose_withorientation_v2.py
+$ rosrun autonomous setkinematicspose_withorientation_v2.py
 
 *ensure that your codes are in the src folder of your autonomous package
 *ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x setkinematicspose_withorientation.py)
