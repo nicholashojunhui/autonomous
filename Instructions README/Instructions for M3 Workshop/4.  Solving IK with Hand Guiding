@@ -37,13 +37,15 @@ Execution Instructions using Processing GUI:
 
 ~/catkin_ws/src/ -> open_manipulator_processing -> Chain -> Chain.pde
 
-8b. Note: If there is error with the OpenGL, find the “settings” function [Line ~64] and change to the following:
+8b. Note: If encounter the following error: "Profile GL4bc is not available on X11GraphicsDevice", edit Chain.pde under settings functions [Line ~64]:
 
-void settings()
-{
-   System.setProperty(“jogl.disable.openglcore”, “false”);
-   size (900, 900, P3D);
+void settings() { 
+  System.setProperty("jogl.disable.openglcore", "false");
+  size(900, 900, OPENGL);
 }
+
+If still cannot, change "size(900, 900, OPENGL)" to:
+"size(400, 400, P3D)"
 
 9. Begin Hand Guiding
 
