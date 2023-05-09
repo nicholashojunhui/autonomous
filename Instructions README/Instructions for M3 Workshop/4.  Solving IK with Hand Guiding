@@ -33,10 +33,17 @@ Execution Instructions using Processing GUI:
 
 7. Click File -> Open
 
-8. Search downloaded processing file from the following path and open it on Processing IDE:
+8a. Search downloaded processing file from the following path and open it on Processing IDE:
 
 ~/catkin_ws/src/ -> open_manipulator_processing -> Chain -> Chain.pde
 
+8b. Note: If there is error with the OpenGL, find the “settings” function [Line ~64] and change to the following:
+
+void settings()
+{
+   System.setProperty(“jogl.disable.openglcore”, “false”);
+   size (900, 900, P3D);
+}
 
 9. Begin Hand Guiding
 
