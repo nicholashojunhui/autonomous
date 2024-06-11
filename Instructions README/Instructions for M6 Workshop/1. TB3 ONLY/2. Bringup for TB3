@@ -8,6 +8,8 @@ $ roscore
 
 $ ssh ubuntu@192.168.XX.XX
 
+Password: turtlebot
+
 You will see in this terminal that you are connected to the pi’s terminal
 
 3. On the TB3 PC (using the linked pi terminal), type the following to bring up basic packages to start TB3:
@@ -17,6 +19,8 @@ $ roslaunch turtlebot3_bringup turtlebot3_robot.launch
 4. On the Remote PC, open new terminal and type the following commands to access TB3 PC:
 
 $ ssh ubuntu@192.168.XX.XX
+
+Password: turtlebot
 
 5. Activate rpicamera
 
