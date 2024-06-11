@@ -12,6 +12,8 @@ $ roscore
 
 $ ssh ubuntu@192.168.XX.XX
 
+Password: turtlebot
+
 You will see in this terminal that you are connected to the pi’s terminal
 
 3a. Check if the time and date are synchronized. If NO, go to Step 3b. If YES, proceed to Step 4
