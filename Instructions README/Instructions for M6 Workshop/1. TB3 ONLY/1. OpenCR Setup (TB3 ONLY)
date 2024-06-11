@@ -4,6 +4,8 @@ OpenCR Setup
 
 $ ssh ubuntu@192.168.XX.XX
 
+Password: turtlebot
+
 You will see that the Remote PC will log into the Raspberry Pi which is the TB3 PC
 
 2. On the TB3 PC, type the following commands in order to upload the firmware to the OpenCR
