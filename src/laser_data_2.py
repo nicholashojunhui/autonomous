@@ -11,13 +11,13 @@ def callback(msg):				#define a function called 'callback' that receives a param
 	print('Front')				#value for front-direction laser beam
 	print(msg.ranges[0])			#print the distance to any obstacle in front of the robot. The sensor returns a vector of 359 values, with 0 being in front of the TB3
 
-	print('Right')
+	print('Left')
 	print(msg.ranges[58])
 
 	print('Back')
 	print(msg.ranges[117])
 
-	print('Left')
+	print('Right')
 	print(msg.ranges[175])
 
 rospy.init_node('laser_data')			# Initiate a Node called 'laser_data'
